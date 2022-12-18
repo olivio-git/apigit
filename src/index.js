@@ -14,7 +14,9 @@ app.get('/',(req,res)=>{
     db.query('SELECT * FROM persona',(err,resul)=>{
         if(err){
             res.send(err);
+            console.log(err);
         }else{
+            console.log(resul)
             res.send(resul)
         }
     })
