@@ -22,8 +22,8 @@ app.get('/',(req,res)=>{
     })
 })
 
-app.post('/add',(req,res)=>{
-    db.query('INSERT INTO persona(name,apellido,edad,telefono,foto)VALUES("fofis","lisca",20,911,"none")',
+app.get('/add',(req,res)=>{
+    db.query('INSERT INTO persona(name,apellido,edad,telefono,foto)VALUES("second","secon",11,0121,"none")',
     (err,resul)=>{
         if(err){
             res.send(err)
