@@ -22,6 +22,17 @@ app.get('/',(req,res)=>{
     })
 })
 
+app.post('/add',(req,res)=>{
+    db.query('INSERT INTO persona(name,apellido,edad,telefono,foto)VALUES("fofis","lisca",20,911,"none")',
+    (err,resul)=>{
+        if(err){
+            res.send(err)
+        }else{
+            res.send(resul)
+        }
+    })
+})
+
 app.listen(PORT,()=>{
     console.log('YEY, RUNNING IN PORT: '+PORT)
 })
