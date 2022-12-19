@@ -21,7 +21,18 @@ app.get('/',(req,res)=>{
         }
     })
 })
-
+app.delete('/delete/:id',(req,res)=>{
+    const id=req.params.id;
+    db.query('DELETE FROM persona where id=?',
+    id,
+    (err,resul)=>{
+        if(err){
+            res.send(err)
+        }else{
+            res.send(resul)
+        }
+    })
+})
 app.post('/add',(req,res)=>{
     const name=req.body.name;
     const apellido=req.body.apellido;
