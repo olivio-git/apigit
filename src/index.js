@@ -23,9 +23,19 @@ app.get('/',(req,res)=>{
 })
 app.delete('/delete/:id',(req,res)=>{
     const id=req.params.id;
-    db.query('DELETE FROM persona where id=?',
+    db.query('delete from persona where id=?;',
     id,
     (err,resul)=>{
+        if(err){
+            res.send(err)
+        }else{
+            res.send(resul)
+        }
+    })
+})
+app.get('/perfil/:id',(req,res)=>{
+    const id=9;
+    db.query(`select from persona where id=${id}`,id,(err,resul)=>{
         if(err){
             res.send(err)
         }else{
