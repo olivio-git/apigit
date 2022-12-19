@@ -39,7 +39,7 @@ app.get('/perfil/:id',(req,res)=>{
         if(err){
             res.send(err)
         }else{
-            if(resul){
+            if(resul!==[]){
                 res.send(resul)
             }else{
                 res.send("Vacio")
