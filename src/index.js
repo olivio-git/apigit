@@ -35,7 +35,7 @@ app.delete('/delete/:id',(req,res)=>{
 })
 app.get('/perfil/:id',(req,res)=>{
     const id=9;
-    db.query(`select from persona where id=${id}`,id,(err,resul)=>{
+    db.query(`select * from persona where id=${id}`,id,(err,resul)=>{
         if(err){
             res.send(err)
         }else{
