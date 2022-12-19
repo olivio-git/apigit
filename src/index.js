@@ -23,8 +23,13 @@ app.get('/',(req,res)=>{
 })
 
 app.post('/add',(req,res)=>{
-    
-    db.query('INSERT INTO persona(name,apellido,edad,telefono,foto)VALUES("thirt","thir",33,007,"null")',
+    const name=req.body.name;
+    const apellido=req.body.apellido;
+    const edad=req.body.edad;
+    const telefono=req.body.telefono;
+    const foto=req.body.foto;
+    db.query('INSERT INTO persona(name,apellido,edad,telefono,foto)VALUES(?,?,?,?,?)',
+    [name,apellido,edad,telefono,foto],
     (err,resul)=>{
         if(err){
             res.send(err)
