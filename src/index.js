@@ -33,8 +33,8 @@ app.delete('/delete/:id',(req,res)=>{
         }
     })
 })
-app.put('/upate/:id',(req,res)=>{
-    const id=req.params.id;
+app.put('/upate',(req,res)=>{
+    const id=req.body.id;
     
     const name=req.body.name;
     const apellido=req.body.apellido;
