@@ -46,7 +46,7 @@ app.put('/upate',(req,res)=>{
     [name,apellido,edad,telefono,foto,id],
     (err,resul)=>{
         if(err){
-            res.send(err)
+            console.log(err)
         }else{
             res.send(resul)
         }
