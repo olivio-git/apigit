@@ -11,15 +11,15 @@ app.post('/create',(req,res)=>{
     
 })
 app.get('/',(req,res)=>{
-    db.query('SELECT * FROM persona',(err,resul)=>{
-        if(err){
-            res.send(err);
-            console.log(err);
-        }else{
-            console.log(resul)
-            res.send(resul)
-        }
-    })
+    // db.query('SELECT * FROM persona',(err,resul)=>{
+    //     if(err){
+    //         res.send(err);
+    //         console.log(err);
+    //     }else{
+    //         console.log(resul)
+    //         res.send(resul)
+    //     }
+    // })
 })
 app.delete('/delete/:id',(req,res)=>{
     const id=req.params.id;
@@ -33,15 +33,14 @@ app.delete('/delete/:id',(req,res)=>{
         }
     })
 })
-app.put('/upate',(req,res)=>{
-    const id=req.body.id;
-    console.log(id)
+app.put('/create/:id',(req,res)=>{
+    const id=req.params.id;
     const name=req.body.name;
     const apellido=req.body.apellido;
     const edad=req.body.edad;
     const telefono=req.body.telefono;
     const foto=req.body.foto;
-
+    console.log("here")
     db.query(`update persona set name=?,apellido=?,edad=?,telefono=?,foto=? where id=${id};`,
     [name,apellido,edad,telefono,foto,id],
     (err,resul)=>{
