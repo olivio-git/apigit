@@ -35,13 +35,13 @@ app.delete('/delete/:id',(req,res)=>{
 })
 app.put('/create/:id',(req,res)=>{
     const id=req.params.id;
-    const name=req.body.name;
+    const nombre=req.body.nombre;
     const apellido=req.body.apellido;
     const edad=req.body.edad;
     const telefono=req.body.telefono;
     const foto=req.body.foto;
-    db.query(`update persona set name=?,apellido=?,edad=?,telefono=?,foto=? where id=${id};`,
-    [name,apellido,edad,telefono,foto,id],
+    db.query(`update persona set nombre=?,apellido=?,edad=?,telefono=?,foto=? where id=${id};`,
+    [nombre,apellido,edad,telefono,foto,id],
     (err,resul)=>{
         if(err){
             console.log(err)
@@ -64,13 +64,13 @@ app.get('/perfil/:id',(req,res)=>{
     })
 })
 app.post('/add',(req,res)=>{
-    const name=req.body.name;
+    const nombre=req.body.nombre;
     const apellido=req.body.apellido;
     const edad=req.body.edad;
     const telefono=req.body.telefono;
     const foto=req.body.foto;
-    db.query('INSERT INTO persona(name,apellido,edad,telefono,foto)VALUES(?,?,?,?,?)',
-    [name,apellido,edad,telefono,foto],
+    db.query('INSERT INTO persona(nombre,apellido,edad,telefono,foto)VALUES(?,?,?,?,?)',
+    [nombre,apellido,edad,telefono,foto],
     (err,resul)=>{
         if(err){
             res.send(err)
