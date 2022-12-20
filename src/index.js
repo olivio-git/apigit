@@ -33,6 +33,23 @@ app.delete('/delete/:id',(req,res)=>{
         }
     })
 })
+app.put('/upate/:id',(req,res)=>{
+    const id=req.params.id;
+    const name=req.body.name;
+    const apellido=req.body.apellido;
+    const edad=req.body.edad;
+    const telefono=req.body.telefono;
+    const foto=req.body.foto;
+    db.query(`update persona set name=?,apellido=?,edad=?,telefono=?,foto=? where id=${id};`,
+    [name,apellido,edad,telefono,foto,id],
+    (err,resul)=>{
+        if(err){
+            res.send(err)
+        }else{
+            res.send(resul)
+        }
+    })
+})
 app.get('/perfil/:id',(req,res)=>{
     const id=req.params.id
     db.query(`select * from persona where id=${id}`,id,(err,resul)=>{
