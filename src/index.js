@@ -40,7 +40,6 @@ app.put('/create/:id',(req,res)=>{
     const edad=req.body.edad;
     const telefono=req.body.telefono;
     const foto=req.body.foto;
-    console.log("here")
     db.query(`update persona set name=?,apellido=?,edad=?,telefono=?,foto=? where id=${id};`,
     [name,apellido,edad,telefono,foto,id],
     (err,resul)=>{
