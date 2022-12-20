@@ -35,7 +35,7 @@ app.delete('/delete/:id',(req,res)=>{
 })
 app.put('/upate',(req,res)=>{
     const id=req.body.id;
-    
+    console.log(id)
     const name=req.body.name;
     const apellido=req.body.apellido;
     const edad=req.body.edad;
