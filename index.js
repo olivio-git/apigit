@@ -16,7 +16,6 @@ app.get('/',(req,res)=>{
             res.send(err);
             console.log(err);
         }else{
-            console.log(resul)
             res.send(resul)
         }
     })
