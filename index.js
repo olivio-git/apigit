@@ -1,7 +1,7 @@
-import {db} from './connect.js';
+import {db} from './src/connect.js';
 import express from 'express';
 import cors from 'cors';
-import {PORT} from './config.js';
+import {PORT} from './src/config.js';
 const app=express();
 
 app.use(cors());
