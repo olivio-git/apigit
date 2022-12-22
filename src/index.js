@@ -50,7 +50,6 @@ app.put('/create/:id',(req,res)=>{
         }
     })
 })
-
 app.get('/perfil/:id',(req,res)=>{
 
     const id=req.params.id
